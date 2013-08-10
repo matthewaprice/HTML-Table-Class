@@ -118,8 +118,8 @@ class HTMLTable {
 					</tr>				
 				<?php else : ?>
 					<?php foreach ( $this->table_rows as $row ) : ?>
-					<tr<?php echo ( isset( $row['row_style'] ) ) ? ' class="' . $row['row_style'] . '"' : ''; ?>>
-						<?php foreach ( range( 1, $column_count ) as $r ) : ?>
+					<tr<?php echo ( isset( $row['row_style'] ) ) ? ' class="' . $row['row_style'] . '"' : ''; ?><?php echo ( isset( $row['row_id'] ) ) ? ' id="' . $row['row_id'] . '"' : ''; ?>>
+					<?php foreach ( range( 1, $column_count ) as $r ) : ?>
 							<?php $col = 'col' . $r; ?>
 							<td><?php echo $row[$col]; ?></td>
 						<?php endforeach; ?>
