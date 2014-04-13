@@ -24,7 +24,8 @@ class HTMLTable {
 		$defaults = array( 
 			'table_id' => $table_id,
 			'table_class' => 'table',
-			'display_footer' => true
+			'display_footer' => true,
+			'no_rows_message' => 'Nothing Found'
 		);
 		$args = $this->parseArgs( $args,$defaults );
 		extract($args);	
@@ -114,7 +115,7 @@ class HTMLTable {
 			<tbody>
 				<?php if ( !$this->table_rows ) : ?>
 					<tr>
-						<td colspan="<?php echo $column_count; ?>">Nothing Found</td>
+						<td colspan="<?php echo $column_count; ?>"><?php echo $this->table_args['no_rows_message']; ?></td>
 					</tr>				
 				<?php else : ?>
 					<?php foreach ( $this->table_rows as $row ) : ?>
