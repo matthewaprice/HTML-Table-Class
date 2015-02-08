@@ -1,7 +1,4 @@
 <?php
-
-namespace matthewprice\htmltable;
-
 /**
  * class HTML Table
  *
